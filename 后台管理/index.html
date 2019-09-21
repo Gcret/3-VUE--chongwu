@@ -59,7 +59,7 @@
 				 	<button type="button" class="btn btn-success" id="btn">添加</button> 
 				</div>	
 			</div>
-			<h2>uid:200000 首页  狗狗</h2>
+			<h2>uid:200001 </h2>
 			<div class="row">
 				<div class="col-lg-12">
 					<table class="table">
@@ -81,7 +81,7 @@
 				</div>
 			</div>	
 			<br>
-			<h2>uid:200001  首页  猫猫</h2>
+			<h2>uid:200002</h2>
 			<div class="row">
 				<div class="col-lg-12">
 					<table class="table">
@@ -103,7 +103,7 @@
 				</div>
 			</div>
 			<br>
-			<h2>uid:200002  首页  附近</h2>
+			<h2>uid:200003</h2>
 			<div class="row">
 				<div class="col-lg-12">
 					<table class="table">
@@ -125,7 +125,7 @@
 				</div>
 			</div>
 			<br>
-			<h2>uid:200003 首页  商城</h2>
+			<h2>uid:200004</h2>
 			<div class="row">
 				<div class="col-lg-12">
 					<table class="table">
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 			<br>
-			<h2>uid:200004  购宠</h2>
+			<h2>uid:200005</h2>
 			<div class="row">
 				<div class="col-lg-12">
 					<table class="table">
@@ -175,6 +175,68 @@
 					 <div id="motaikuang4"></div>
 				</div>	
 			</div>
+			
+			
+			<h2>uid:200005</h2>
+			<div class="row">
+				<div class="col-lg-12">
+					<table class="table">
+						<tr>
+							<th>序号</th>
+							<th>名字</th>
+							<th>照片</th>
+							<th>详情</th>
+							<th>价格</th>
+							<th>删除</th>
+						</tr>
+						<tr>
+                            <tbody id="nums5">
+                                  <!--<tr>
+                                     <td>1</td>
+                                     <td>2</td>
+                                     <td>4</td>
+                                     <td>3</td>
+                                     <td>5</td>
+                                     <td>5</td>
+                                  </tr> -->
+                             </tbody>
+                         </tr>
+					</table>
+					 <div id="motaikuang5"></div>
+				</div>	
+			</div>
+			<h2>uid:200005</h2>
+			<div class="row">
+				<div class="col-lg-12">
+					<table class="table">
+						<tr>
+							<th>序号</th>
+							<th>名字</th>
+							<th>照片</th>
+							<th>详情</th>
+							<th>价格</th>
+							<th>删除</th>
+						</tr>
+						<tr>
+                            <tbody id="nums6">
+                                  <!--<tr>
+                                     <td>1</td>
+                                     <td>2</td>
+                                     <td>4</td>
+                                     <td>3</td>
+                                     <td>5</td>
+                                     <td>5</td>
+                                  </tr> -->
+                             </tbody>
+                         </tr>
+					</table>
+					 <div id="motaikuang6"></div>
+				</div>	
+			</div>
+			
+			
+			
+			
 		</div>	
 		
 		
@@ -182,11 +244,14 @@
 		<script type="text/javascript">
 			//添加
 			add();
-			show(200000,'#nums');
-			show(200001,'#nums1');
-			show(200002,'#nums2');
-			show(200003,'#nums3');
-			show(200004,'#nums4');
+
+			show(200001,'#nums');
+			show(200002,'#nums1');
+			show(200003,'#nums2');
+			show(200004,'#nums3');
+			show(200005,'#nums4');
+			show(200006,'#nums5');
+			show(200007,'#nums6');
 			
 			
 			function add(){
@@ -242,10 +307,11 @@
 								 $(".delet").click(function () {
 			                        var uid = id;
 			                        var pid = $(this).attr("pid");
-			                   
+			                   		var token='bd14452de8cc24e4b59ed386b1f43431'
 			                        $.get("http://jx.xuzhixiang.top/ap/api/goods/goods-delete.php", {
 			                        uid:uid,
-			                        pid,
+			                        pid:pid,
+			                        token:123
 			                        }).done(data => {
 			                        
 			                        show(id,num);

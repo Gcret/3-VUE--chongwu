@@ -93,7 +93,10 @@
 	.nav1{
 		width:150px;
 		font-size:14px;
-		color:#000
+		color:#000;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	.nav2{
 		width:150px;

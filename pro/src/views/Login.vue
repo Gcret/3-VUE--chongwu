@@ -44,47 +44,32 @@
 				password:'',
 				tishi:'',
 				tishi1:"",
-				 isLoading: false
+				isLoading: false
 			}
 		},
 		methods:{
 			login(){
-				if(this.username !== ""){
-					var reg =/^[a-zA-Z0-9_-]{4,16}$/;
-					
-					if(!reg.test(this.username)){
-						this.tishi=("请输入4-16位字母、数字的账号");
-						
+				if(this.username && this.password){
+					var reg = /^[a-zA-Z0-9_-]{4,16}$/; 
+					if(!reg.test(this.username)){	
+						this.tishi=('请输入4-15位数字、字母组合')	;//:error-message="tishi"为输入框的提示信息
 					}else{
-						
-						var params = {username:this.username,password:this.password}
-						api.getLogin(params).then((data)=>{
-							//console.log(data)
-							if(this.username==''){
-								this.tishi=('账号不能为空')
-							}else{
-								if(data.code == 0){
+					var params={username:this.username,password:this.password};
+					api.getLogin(params).then((data)=>{
+						console.log(data.msg)
+						if(data.code == 0){
 									this.tishi=(data.msg)
 								}else{
-									this.tishi=(data.msg)
-									localStorage.setItem('username',this.username)
-									this.$router.push('/home')
+									this.tishi=(data.msg);
+									this.$router.push('/index')
 								}
-							}
-						})
-					}
-					
-				}
-				
-				
-				
-				
-				
-				
-				
-				
-				
+						})	
+					}					
+				}else{
+					this.$notify('请输入用户名和密码')	//危险提示信息
+				}	
 			},
+			
 			onRefresh() {
 		      setTimeout(() => {
 		        this.$toast('刷新成功');

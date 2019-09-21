@@ -66,7 +66,7 @@ export default{
 									this.tishi=(data.msg)
 								}else{
 									this.tishi=(data.msg);
-									//this.$router.push('/login')
+									this.$router.push('/login')
 								}
 							}
 						})	
