@@ -56,7 +56,7 @@
 					}else{
 					var params={username:this.username,password:this.password};
 					api.getLogin(params).then((data)=>{
-						console.log(data.msg)
+						//console.log(data.msg)
 						if(data.code == 0){
 									this.tishi=(data.msg)
 								}else{

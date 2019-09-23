@@ -13,6 +13,11 @@
 		
 		
 		<van-button round type="warning" size="large" class="box8" @click="setting()">退出登录</van-button>
+		
+		
+		
+		
+		
 	</van-pull-refresh>	
 	</div>
 	
@@ -25,7 +30,8 @@
 			return{
 				title:'我的',
 				username:'',
-				isLoading: false
+				isLoading: false,
+				 activeKey: 0
 			}
 		},
 		methods:{
@@ -63,7 +69,7 @@
 		height:80vh
 	}
 	.shez{
-		background:#ccc;
+		background:#fff;
 		height: 100vh;
 	}
 	.wuo{

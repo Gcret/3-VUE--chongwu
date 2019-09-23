@@ -6,7 +6,11 @@
 			 
 			</van-swipe>
 		
-			
+			<van-notice-bar
+				  left-icon="volume-o"
+				
+				  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+				/>
 		<div class="con">
 			<van-button type="primary" to="/fujin">附近</van-button>
 			<van-button type="primary" to="/shangcheng">商城</van-button>
@@ -16,6 +20,7 @@
 			<van-card
 				v-for="(item,i) in list"
 				:key="i"
+				tag="热卖"
 			  :price="item.pprice*0.9"
 			  :desc="item.pdesc"  
 			  :title="item.pname"
